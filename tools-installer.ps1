@@ -46,7 +46,7 @@ function Show-MainMenu {
     Write-Host "   =                    MAIN MENU - Press Key                     ="
     Write-Host "   ================================================================"
     Write-Host ""
-    Write-Host "    [1] About AFNAN                 [2] PowerShell Tweaks"
+    Write-Host "    [1] About Angela                 [2] PowerShell Tweaks"
     Write-Host ""
     Write-Host "    [3] >> Essential <<             [4] Run Scripts"
     Write-Host ""
