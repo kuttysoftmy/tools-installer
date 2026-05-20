@@ -1,11 +1,17 @@
 # **Tools Installer**
 
-A Windows batch script with an interactive menu to quickly install developer tools and run automation scripts. This script simplifies the setup of essential development tools and automation utilities on Windows systems.
+🚀 A cross-platform installer toolkit with interactive menus for Windows (PowerShell) and Linux/macOS (Bash).
+It simplifies initial machine setup for dev, automation, and AI workflows.
 
 ## Run in CMD
 ```
 curl -o tools-installer.ps1 https://raw.githubusercontent.com/kuttysoftmy/tools-installer/main/tools-installer.ps1 && powershell -ExecutionPolicy Bypass -File tools-installer.ps1
 
+```
+
+## Run on Linux / macOS
+```bash
+curl -fsSL -o tools-installer.sh https://raw.githubusercontent.com/kuttysoftmy/tools-installer/main/tools-installer.sh && chmod +x tools-installer.sh && ./tools-installer.sh
 ```
 
 <details>
@@ -31,54 +37,79 @@ Start-Process "$env:TEMP\tools-installer.cmd" -Verb RunAs
 ```
 </details>
 
-## **Features**
+## **✨ Features**
 
-*   **Interactive Menu**: Choose from a list of options to install tools or run scripts.
-*   **Developer Tools**: Install Node.js LTS, Python, Git, Chocolatey, n8n, Gemini CLI, and Qwen CLI.
-*   **Automation Scripts**: Run Chris Titus Tool, MassGrave, and Coporton scripts.
-*   **PowerShell Management**: View or unrestrict PowerShell execution policies.
-*   **Flexible Execution**: Run all tools/scripts in sequence or select specific ones to execute.
+*   **🧭 Interactive Menu**: Select categories and install tools with single-key choices.
+*   **🛠️ Developer Essentials**: Install Chocolatey, Node.js LTS, OpenClaw (AutoClaw), Docker Desktop, and Kubernetes CLI (`kubectl`).
+*   **🤖 AI + Automation**: Install Gemini CLI, Qwen CLI, n8n, and run LLM helper tools.
+*   **⚙️ Script Shortcuts**: Launch useful tools like Chris Titus, MassGrave, Coporton, Sparkle, and GHGrab.
+*   **🔐 PowerShell Policy Helpers**: Quickly view and update execution policy.
+*   **🐧🍎 Linux/macOS Support**: Use `tools-installer.sh` for Bash-based installation flow across Linux and macOS.
 
-## **Menu Options**
+## **📋 Key Menu Options**
 
-1.  **See Policy**: Displays the current PowerShell execution policy.
-2.  **Unrestrict Policy**: Sets PowerShell execution policy to Unrestricted.
-3.  **Install Chocolatey**: Installs the Chocolatey package manager.
-4.  **Install Node.js LTS**: Installs the Long-Term Support version of Node.js.
-5.  **Run Chris Titus Tool**: Executes the Chris Titus Windows optimization script.
-6.  **Run Mass Grave**: Runs the MassGrave Windows activation script.
-7.  **Run Coporton**: Executes the Coporton automation script.
-8.  **Install Python**: Installs the latest version of Python.
-9.  **Install Git**: Installs Git for version control.
-10.  **Install n8n**: Installs n8n automation tool (run `n8n` in cmd to start).
-11.  **Install Gemini CLI**: Installs Google's Gemini CLI (run `gemini` in cmd to start).
-12.  **Install Qwen CLI**: Installs Qwen CLI (run `qwen` in cmd to start).
-13.  **Run All**: Executes all options in sequence.
-14.  **Exit**: Closes the script.
+1.  **[Essential] Install Chocolatey**: Installs the Chocolatey package manager.
+2.  **[Essential] Install Node.js LTS**: Installs the LTS version of Node.js.
+3.  **[Essential] Install OpenClaw (AutoClaw)**: Installs OpenClaw via winget package `ZhipuAI.AutoClaw`.
+4.  **[Essential] Install Docker Desktop**: Installs Docker Desktop via winget.
+5.  **[Essential] Install Kubernetes CLI (`kubectl`)**: Installs `kubectl` via winget.
+6.  **[PowerShell Tweaks] See Policy**: Displays current PowerShell execution policy.
+7.  **[PowerShell Tweaks] Unrestrict Policy**: Sets execution policy to Unrestricted.
+8.  **[Run Scripts] Chris Titus / MassGrave / Coporton / Sparkle / GHGrab**: Launches common helper scripts.
+9.  **[Recommended Tools] Git / Python / .NET / FFmpeg / 7-Zip / WinDirStat / yt-dlp / ngrok**: Installs dev and utility tools.
+10. **[AI in PC] Gemini CLI / Qwen CLI / Ollama / LLM-Checker**: Installs and runs local AI tooling.
 
 ## **Prerequisites**
 
-*   Windows operating system.
-*   Administrative privileges to run the script and install tools.
+*   Windows, Linux, or macOS.
+*   Administrative privileges (`Run as Administrator` / `sudo`) to install packages.
 *   Internet connection for downloading tools and scripts.
 
-## **Usage**
+## **🧪 Usage**
 
-1.  Download the `tools-installer.bat` script from the [GitHub repository](https://github.com/kuttysoftmy/tools-installer).
-2.  Right-click the script and select **Run as Administrator**.
-3.  Use the interactive menu to select options by entering numbers (1-27).
-4.  Follow on-screen prompts to install tools or run scripts.
-5.  For CLI tools (n8n, Gemini CLI, Qwen CLI), run their respective commands in the command prompt after installation.
+1.  Choose the installer script for your OS.
+2.  On Windows, run `tools-installer.ps1` in elevated PowerShell.
+3.  On Linux/macOS, run `tools-installer.sh` in terminal (use `sudo` when prompted).
+4.  Use the interactive menu and press the shown keys.
+5.  Follow on-screen prompts to install tools or run scripts.
+6.  For CLI tools (`n8n`, `gemini`, `qwen`, `kubectl`, `docker`), open a new terminal after installation.
+
+## **Linux / macOS Steps**
+
+1.  Download the script:
+```bash
+curl -fsSL -o tools-installer.sh https://raw.githubusercontent.com/kuttysoftmy/tools-installer/main/tools-installer.sh
+```
+2.  Make it executable:
+```bash
+chmod +x tools-installer.sh
+```
+3.  Run it:
+```bash
+./tools-installer.sh
+```
+4.  If a package needs elevated permission, enter your `sudo` password when prompted.
 
 ## **Installation Notes**
 
 *   **Chocolatey**: Required for installing Node.js, Python, and Git. Ensure option 3 is run before options 4, 8, or 9 if Chocolatey is not already installed.
 *   **PowerShell Policy**: Options 1 and 2 help manage PowerShell execution policies, which may be required for some scripts.
-*   **CLI Tools**: After installing n8n, Gemini CLI, or Qwen CLI, open a new command prompt and type their respective commands (`n8n`, `gemini`, `qwen`) to use them.
+*   **CLI Tools**: After installing n8n, Gemini CLI, Qwen CLI, OpenClaw (AutoClaw), Docker, or kubectl, open a new command prompt and run their commands (`n8n`, `gemini`, `qwen`, `autoclaw`, `docker`, `kubectl`).
 
 ## **License**
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/kuttysoftmy/tools-installer/blob/main/LICENSE) file for details.
+
+## **Contributing**
+
+Contributions are welcome.
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Commit your changes with clear messages.
+4. Open a pull request.
+
+Please review [CONTRIBUTING.md](https://github.com/kuttysoftmy/tools-installer/blob/main/CONTRIBUTING.md), [CODE_OF_CONDUCT.md](https://github.com/kuttysoftmy/tools-installer/blob/main/CODE_OF_CONDUCT.md), and [CITATION.cff](https://github.com/kuttysoftmy/tools-installer/blob/main/CITATION.cff) before submitting.
 
 ## **Author**
 

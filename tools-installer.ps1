@@ -30,18 +30,23 @@ function Refresh-Env {
     $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 }
 
+# Helper to print the Angela ASCII banner consistently
+function Write-AngelaBanner {
+    Write-Host ""
+    Write-Host "                         _      _   _    ____   _____   _          _    "
+    Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
+    Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
+    Write-Host "                      / ___ \  | |\  | | |_| |  |  |___ | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____|  |_____| |_____| /_/   \_\"
+    Write-Host ""
+}
+
 # ==============================
 # MAIN MENU
 # ==============================
 function Show-MainMenu {
     Clear-Host
-    Write-Host ""
-    Write-Host "                         _      _   _    ____   _____   _          _    "
-    Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
-    Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
-    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
-    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
-    Write-Host ""
+    Write-AngelaBanner
     Write-Host "   ================================================================"
     Write-Host "   =                    MAIN MENU - Press Key                     ="
     Write-Host "   ================================================================"
@@ -84,15 +89,9 @@ function Show-MainMenu {
 # ==============================
 function Show-AboutAngela {
     Clear-Host
-    Write-Host ""
-    Write-Host "                         _      _   _    ____   _____   _          _    "
-    Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
-    Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
-    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
-    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
-    Write-Host ""
+    Write-AngelaBanner
     Write-Host "   ================================================================"
-    Write-Host "   =                    ABOUT Angela                             ="
+    Write-Host "   =                    ABOUT ANGELA                             ="
     Write-Host "   ================================================================"
     Write-Host ""
     Write-Host "    This tool was created by Angela to help you quickly install"
@@ -105,17 +104,16 @@ function Show-AboutAngela {
     Write-Host "    - AI tools and automation setup"
     Write-Host "    - System customization options"
     Write-Host ""
-    Write-Host "    Portfolio: https://Angela-nex.github.io/portfolio/"
+    Write-Host "    The goal is to provide a one-stop menu for setting up your PC."
     Write-Host ""
     Write-Host "   ================================================================"
-    Write-Host "    [1] Open Portfolio       [Z] Go Back"
+    Write-Host "    [Z] Go Back"
     Write-Host "   ================================================================"
     Write-Host ""
 
     $subChoice = Get-MenuChoice
 
     switch ($subChoice) {
-        '1' { Open-Portfolio; Show-AboutAngela }
         'Z' { Show-MainMenu }
         default { Show-AboutAngela }
     }
@@ -130,8 +128,8 @@ function Show-PowerShellMenu {
     Write-Host "                         _      _   _    ____   _____   _          _    "
     Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
     Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
-    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
-    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
+    Write-Host "                      / ___ \  | |\  | | |_| |  |  |___ | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____|  |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =                 POWERSHELL TWEAKS                            ="
@@ -161,20 +159,20 @@ function Show-PowerShellMenu {
 # ==============================
 function Show-EssentialMenu {
     Clear-Host
-    Write-Host ""
-    Write-Host "                         _      _   _    ____   _____   _          _    "
-    Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
-    Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
-    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
-    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
-    Write-Host ""
+    Write-AngelaBanner
     Write-Host "   ================================================================"
-    Write-Host "   =               >>>>>> ESSENTIAL <<<<<<                 ="
+    Write-Host "   =                 >>>>>> ESSENTIAL <<<<<<                   ="
     Write-Host "   ================================================================"
     Write-Host ""
     Write-Host "    [1] Chocolatey"
     Write-Host ""
     Write-Host "    [2] Node.js LTS"
+    Write-Host ""
+    Write-Host "    [3] OpenClaw (AutoClaw)"
+    Write-Host ""
+    Write-Host "    [4] Docker Desktop"
+    Write-Host ""
+    Write-Host "    [5] Kubernetes CLI (kubectl)"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "    [Z] Go Back"
@@ -186,6 +184,9 @@ function Show-EssentialMenu {
     switch ($subChoice) {
         '1' { Install-Choco; Show-EssentialMenu }
         '2' { Install-NodeLTS; Show-EssentialMenu }
+        '3' { Install-OpenClaw; Show-EssentialMenu }
+        '4' { Install-DockerDesktop; Show-EssentialMenu }
+        '5' { Install-Kubectl; Show-EssentialMenu }
         'Z' { Show-MainMenu }
         default { Show-EssentialMenu }
     }
@@ -200,8 +201,8 @@ function Show-RunScriptsMenu {
     Write-Host "                         _      _   _    ____   _____   _          _    "
     Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
     Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
-    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
-    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
+    Write-Host "                      / ___ \  | |\  | | |_| |  |  |___ | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____|  |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =                    RUN SCRIPTS                               ="
@@ -241,8 +242,8 @@ function Show-RecommendedTools {
     Write-Host "                         _      _   _    ____   _____   _          _    "
     Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
     Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
-    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
-    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
+    Write-Host "                      / ___ \  | |\  | | |_| |  |  |___ | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____|  |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =                 RECOMMENDED TOOLS                            ="
@@ -286,8 +287,8 @@ function Show-AutomationMenu {
     Write-Host "                         _      _   _    ____   _____   _          _    "
     Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
     Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
-    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
-    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
+    Write-Host "                      / ___ \  | |\  | | |_| |  |  |___ | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____|  |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =                     AUTOMATION                               ="
@@ -321,8 +322,8 @@ function Show-AIInPCMenu {
     Write-Host "                         _      _   _    ____   _____   _          _    "
     Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
     Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
-    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
-    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
+    Write-Host "                      / ___ \  | |\  | | |_| |  |  |___ | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____|  |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =                      AI IN PC                                ="
@@ -358,8 +359,8 @@ function Show-ContextMenuMenu {
     Write-Host "                         _      _   _    ____   _____   _          _    "
     Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
     Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
-    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
-    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
+    Write-Host "                      / ___ \  | |\  | | |_| |  |  |___ | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____|  |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =                    CONTEXT MENU                              ="
@@ -393,8 +394,8 @@ function Show-SystemDevMenu {
     Write-Host "                         _      _   _    ____   _____   _          _    "
     Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
     Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
-    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
-    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
+    Write-Host "                      / ___ \  | |\  | | |_| |  |  |___ | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____|  |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =                         SYSTEM TOOLS                         ="
@@ -441,8 +442,8 @@ function Show-ProductivityMenu {
     Write-Host "                         _      _   _    ____   _____   _          _    "
     Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
     Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
-    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
-    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
+    Write-Host "                      / ___ \  | |\  | | |_| |  |  |___ | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____|  |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =                       PRODUCTIVITY APPS                      ="
@@ -485,8 +486,8 @@ function Show-ConfirmExit {
     Write-Host "                         _      _   _    ____   _____   _          _    "
     Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
     Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
-    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
-    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
+    Write-Host "                      / ___ \  | |\  | | |_| |  |  |___ | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____|  |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =                    CONFIRM EXIT                              ="
@@ -580,6 +581,71 @@ function Install-NodeLTS {
         Write-Host "Opening new window to install Node.js LTS..."
         $nodeCmd = 'choco install nodejs-lts -y && echo Node.js installation completed. && pause'
         Start-Process cmd -ArgumentList "/c", $nodeCmd -Wait
+        Write-Host "Refreshing environment variables..."
+        Refresh-Env
+    }
+    Write-Host ""
+    Pause-Script
+}
+
+function Install-OpenClaw {
+    Write-Host "=========================================="
+    Write-Host "Installing OpenClaw (AutoClaw)"
+    Write-Host "=========================================="
+    if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
+        Write-Host "Winget is required. Installing Winget first..."
+        Install-Winget
+    }
+    if (Get-Command autoclaw -ErrorAction SilentlyContinue) {
+        Write-Host "OpenClaw (AutoClaw) is already installed."
+    } else {
+        Write-Host "Opening new window to install OpenClaw (AutoClaw)..."
+        $openClawCmd = 'winget install --id ZhipuAI.AutoClaw -e --accept-package-agreements --accept-source-agreements && echo OpenClaw installation completed. && pause'
+        Start-Process cmd -ArgumentList "/c", $openClawCmd -Wait
+        Write-Host "Refreshing environment variables..."
+        Refresh-Env
+    }
+    Write-Host ""
+    Pause-Script
+}
+
+function Install-DockerDesktop {
+    Write-Host "=========================================="
+    Write-Host "Installing Docker Desktop"
+    Write-Host "=========================================="
+    if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
+        Write-Host "Winget is required. Installing Winget first..."
+        Install-Winget
+    }
+    if (Get-Command docker -ErrorAction SilentlyContinue) {
+        Write-Host "Docker is already installed."
+        docker --version
+    } else {
+        Write-Host "Opening new window to install Docker Desktop..."
+        $dockerCmd = 'winget install --id Docker.DockerDesktop -e --accept-package-agreements --accept-source-agreements && echo Docker Desktop installation completed. && pause'
+        Start-Process cmd -ArgumentList "/c", $dockerCmd -Wait
+        Write-Host "Refreshing environment variables..."
+        Refresh-Env
+    }
+    Write-Host ""
+    Pause-Script
+}
+
+function Install-Kubectl {
+    Write-Host "=========================================="
+    Write-Host "Installing Kubernetes CLI (kubectl)"
+    Write-Host "=========================================="
+    if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
+        Write-Host "Winget is required. Installing Winget first..."
+        Install-Winget
+    }
+    if (Get-Command kubectl -ErrorAction SilentlyContinue) {
+        Write-Host "kubectl is already installed."
+        kubectl version --client
+    } else {
+        Write-Host "Opening new window to install kubectl..."
+        $kubectlCmd = 'winget install --id Kubernetes.kubectl -e --accept-package-agreements --accept-source-agreements && echo kubectl installation completed. && pause'
+        Start-Process cmd -ArgumentList "/c", $kubectlCmd -Wait
         Write-Host "Refreshing environment variables..."
         Refresh-Env
     }
