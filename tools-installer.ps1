@@ -6,7 +6,7 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 }
 
 # Set Window Title and Color to match batch (Green text on Black background)
- $Host.UI.RawUI.WindowTitle = "Tool Installer Menu by Afnan"
+ $Host.UI.RawUI.WindowTitle = "Tool Installer Menu by Angela"
  $Host.UI.RawUI.ForegroundColor = "Green"
  $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host
@@ -64,7 +64,7 @@ function Show-MainMenu {
     $mainChoice = Get-MenuChoice
 
     switch ($mainChoice) {
-        '1' { Show-AboutAfnan }
+        '1' { Show-AboutAngela }
         '2' { Show-PowerShellMenu }
         '3' { Show-EssentialMenu }
         '4' { Show-RunScriptsMenu }
@@ -80,22 +80,22 @@ function Show-MainMenu {
 }
 
 # ==============================
-# ABOUT AFNAN (1)
+# ABOUT Angela (1)
 # ==============================
-function Show-AboutAfnan {
+function Show-AboutAngela {
     Clear-Host
     Write-Host ""
-    Write-Host "                         _    _____ _   _    _    _   _ "
-    Write-Host "                        / \  |  ___| \ | |  / \  | \ | |"
-    Write-Host "                       / _ \ | |_  |  \| | / _ \ |  \| |"
-    Write-Host "                      / ___ \|  _| | |\  |/ ___ \| |\  |"
-    Write-Host "                     /_/   \_\_|   |_| \_/_/   \_\_| \_|"
+    Write-Host "                         _      _   _    ____   _____   _          _    "
+    Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
+    Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
+    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
-    Write-Host "   =                    ABOUT AFNAN                               ="
+    Write-Host "   =                    ABOUT Angela                             ="
     Write-Host "   ================================================================"
     Write-Host ""
-    Write-Host "    This tool was created by AFNAN to help you quickly install"
+    Write-Host "    This tool was created by Angela to help you quickly install"
     Write-Host "    and configure various Windows tools, utilities, and scripts."
     Write-Host ""
     Write-Host "    Features:"
@@ -105,7 +105,7 @@ function Show-AboutAfnan {
     Write-Host "    - AI tools and automation setup"
     Write-Host "    - System customization options"
     Write-Host ""
-    Write-Host "    Portfolio: https://afnan-nex.github.io/portfolio/"
+    Write-Host "    Portfolio: https://Angela-nex.github.io/portfolio/"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "    [1] Open Portfolio       [Z] Go Back"
@@ -115,9 +115,9 @@ function Show-AboutAfnan {
     $subChoice = Get-MenuChoice
 
     switch ($subChoice) {
-        '1' { Open-Portfolio; Show-AboutAfnan }
+        '1' { Open-Portfolio; Show-AboutAngela }
         'Z' { Show-MainMenu }
-        default { Show-AboutAfnan }
+        default { Show-AboutAngela }
     }
 }
 
@@ -127,11 +127,11 @@ function Show-AboutAfnan {
 function Show-PowerShellMenu {
     Clear-Host
     Write-Host ""
-    Write-Host "                         _    _____ _   _    _    _   _ "
-    Write-Host "                        / \  |  ___| \ | |  / \  | \ | |"
-    Write-Host "                       / _ \ | |_  |  \| | / _ \ |  \| |"
-    Write-Host "                      / ___ \|  _| | |\  |/ ___ \| |\  |"
-    Write-Host "                     /_/   \_\_|   |_| \_/_/   \_\_| \_|"
+    Write-Host "                         _      _   _    ____   _____   _          _    "
+    Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
+    Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
+    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =                 POWERSHELL TWEAKS                            ="
@@ -162,11 +162,11 @@ function Show-PowerShellMenu {
 function Show-EssentialMenu {
     Clear-Host
     Write-Host ""
-    Write-Host "                         _    _____ _   _    _    _   _ "
-    Write-Host "                        / \  |  ___| \ | |  / \  | \ | |"
-    Write-Host "                       / _ \ | |_  |  \| | / _ \ |  \| |"
-    Write-Host "                      / ___ \|  _| | |\  |/ ___ \| |\  |"
-    Write-Host "                     /_/   \_\_|   |_| \_/_/   \_\_| \_|"
+    Write-Host "                         _      _   _    ____   _____   _          _    "
+    Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
+    Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
+    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =               >>>>>> ESSENTIAL <<<<<<                 ="
@@ -197,11 +197,11 @@ function Show-EssentialMenu {
 function Show-RunScriptsMenu {
     Clear-Host
     Write-Host ""
-    Write-Host "                         _    _____ _   _    _    _   _ "
-    Write-Host "                        / \  |  ___| \ | |  / \  | \ | |"
-    Write-Host "                       / _ \ | |_  |  \| | / _ \ |  \| |"
-    Write-Host "                      / ___ \|  _| | |\  |/ ___ \| |\  |"
-    Write-Host "                     /_/   \_\_|   |_| \_/_/   \_\_| \_|"
+    Write-Host "                         _      _   _    ____   _____   _          _    "
+    Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
+    Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
+    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =                    RUN SCRIPTS                               ="
@@ -238,11 +238,11 @@ function Show-RunScriptsMenu {
 function Show-RecommendedTools {
     Clear-Host
     Write-Host ""
-    Write-Host "                         _    _____ _   _    _    _   _ "
-    Write-Host "                        / \  |  ___| \ | |  / \  | \ | |"
-    Write-Host "                       / _ \ | |_  |  \| | / _ \ |  \| |"
-    Write-Host "                      / ___ \|  _| | |\  |/ ___ \| |\  |"
-    Write-Host "                     /_/   \_\_|   |_| \_/_/   \_\_| \_|"
+    Write-Host "                         _      _   _    ____   _____   _          _    "
+    Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
+    Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
+    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =                 RECOMMENDED TOOLS                            ="
@@ -283,11 +283,11 @@ function Show-RecommendedTools {
 function Show-AutomationMenu {
     Clear-Host
     Write-Host ""
-    Write-Host "                         _    _____ _   _    _    _   _ "
-    Write-Host "                        / \  |  ___| \ | |  / \  | \ | |"
-    Write-Host "                       / _ \ | |_  |  \| | / _ \ |  \| |"
-    Write-Host "                      / ___ \|  _| | |\  |/ ___ \| |\  |"
-    Write-Host "                     /_/   \_\_|   |_| \_/_/   \_\_| \_|"
+    Write-Host "                         _      _   _    ____   _____   _          _    "
+    Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
+    Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
+    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =                     AUTOMATION                               ="
@@ -318,11 +318,11 @@ function Show-AutomationMenu {
 function Show-AIInPCMenu {
     Clear-Host
     Write-Host ""
-    Write-Host "                         _    _____ _   _    _    _   _ "
-    Write-Host "                        / \  |  ___| \ | |  / \  | \ | |"
-    Write-Host "                       / _ \ | |_  |  \| | / _ \ |  \| |"
-    Write-Host "                      / ___ \|  _| | |\  |/ ___ \| |\  |"
-    Write-Host "                     /_/   \_\_|   |_| \_/_/   \_\_| \_|"
+    Write-Host "                         _      _   _    ____   _____   _          _    "
+    Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
+    Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
+    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =                      AI IN PC                                ="
@@ -355,11 +355,11 @@ function Show-AIInPCMenu {
 function Show-ContextMenuMenu {
     Clear-Host
     Write-Host ""
-    Write-Host "                         _    _____ _   _    _    _   _ "
-    Write-Host "                        / \  |  ___| \ | |  / \  | \ | |"
-    Write-Host "                       / _ \ | |_  |  \| | / _ \ |  \| |"
-    Write-Host "                      / ___ \|  _| | |\  |/ ___ \| |\  |"
-    Write-Host "                     /_/   \_\_|   |_| \_/_/   \_\_| \_|"
+    Write-Host "                         _      _   _    ____   _____   _          _    "
+    Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
+    Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
+    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =                    CONTEXT MENU                              ="
@@ -390,11 +390,11 @@ function Show-ContextMenuMenu {
 function Show-SystemDevMenu {
     Clear-Host
     Write-Host ""
-    Write-Host "                         _    _____ _   _    _    _   _ "
-    Write-Host "                        / \  |  ___| \ | |  / \  | \ | |"
-    Write-Host "                       / _ \ | |_  |  \| | / _ \ |  \| |"
-    Write-Host "                      / ___ \|  _| | |\  |/ ___ \| |\  |"
-    Write-Host "                     /_/   \_\_|   |_| \_/_/   \_\_| \_|"
+    Write-Host "                         _      _   _    ____   _____   _          _    "
+    Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
+    Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
+    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =                         SYSTEM TOOLS                         ="
@@ -438,11 +438,11 @@ function Show-SystemDevMenu {
 function Show-ProductivityMenu {
     Clear-Host
     Write-Host ""
-    Write-Host "                         _    _____ _   _    _    _   _ "
-    Write-Host "                        / \  |  ___| \ | |  / \  | \ | |"
-    Write-Host "                       / _ \ | |_  |  \| | / _ \ |  \| |"
-    Write-Host "                      / ___ \|  _| | |\  |/ ___ \| |\  |"
-    Write-Host "                     /_/   \_\_|   |_| \_/_/   \_\_| \_|"
+    Write-Host "                         _      _   _    ____   _____   _          _    "
+    Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
+    Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
+    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =                       PRODUCTIVITY APPS                      ="
@@ -482,11 +482,11 @@ function Show-ProductivityMenu {
 function Show-ConfirmExit {
     Clear-Host
     Write-Host ""
-    Write-Host "                         _    _____ _   _    _    _   _ "
-    Write-Host "                        / \  |  ___| \ | |  / \  | \ | |"
-    Write-Host "                       / _ \ | |_  |  \| | / _ \ |  \| |"
-    Write-Host "                      / ___ \|  _| | |\  |/ ___ \| |\  |"
-    Write-Host "                     /_/   \_\_|   |_| \_/_/   \_\_| \_|"
+    Write-Host "                         _      _   _    ____   _____   _          _    "
+    Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
+    Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
+    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =                    CONFIRM EXIT                              ="
@@ -505,7 +505,7 @@ function Show-ConfirmExit {
     switch ($exitChoice) {
         '1' {
             Write-Host ""
-            Write-Host "   Thank you for using Tool Installer by AFNAN! Goodbye."
+            Write-Host "   Thank you for using Tool Installer by Angela! Goodbye."
             Write-Host ""
             Start-Sleep -Seconds 2
             exit
@@ -524,7 +524,7 @@ function Open-Portfolio {
     Write-Host "=========================================="
     Write-Host "Opening Your Browser with Portfolio"
     Write-Host "=========================================="
-    Start-Process "https://afnan-nex.github.io/portfolio/index.html"
+    Start-Process "https://Angela-nex.github.io/portfolio/index.html"
     Pause-Script
 }
 
@@ -1043,7 +1043,7 @@ function Install-Cursor {
         Install-Git
     }
     Write-Host "Cloning repository..."
-    git clone https://github.com/afnan-nex/Elegant
+    git clone https://github.com/Angela-nex/Elegant
     if ($LASTEXITCODE -eq 0) {
         Write-Host "Repository cloned successfully to Elegant folder."
     } else {
@@ -1057,7 +1057,7 @@ function Set-CMD0A {
     Write-Host "=========================================="
     Write-Host "Changing CMD color to 0a"
     Write-Host "=========================================="
-    powershell -NoProfile -ExecutionPolicy Bypass -Command "try { Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/afnan-nex/my-fav-scripts/main/cmd-clr-to-0a.cmd' -OutFile 'cmd-clr-to-0a.cmd'; Start-Process 'cmd-clr-to-0a.cmd'; Write-Host 'CMD color script downloaded and executed.' } catch { Write-Host 'Error downloading script: ' + `$_.Exception.Message }"
+    powershell -NoProfile -ExecutionPolicy Bypass -Command "try { Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Angela-nex/my-fav-scripts/main/cmd-clr-to-0a.cmd' -OutFile 'cmd-clr-to-0a.cmd'; Start-Process 'cmd-clr-to-0a.cmd'; Write-Host 'CMD color script downloaded and executed.' } catch { Write-Host 'Error downloading script: ' + `$_.Exception.Message }"
     Write-Host ""
     Pause-Script
 }
