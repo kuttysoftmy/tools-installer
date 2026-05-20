@@ -36,11 +36,11 @@ function Refresh-Env {
 function Show-MainMenu {
     Clear-Host
     Write-Host ""
-    Write-Host "                         _    _____ _   _    _    _   _ "
-    Write-Host "                        / \  |  ___| \ | |  / \  | \ | |"
-    Write-Host "                       / _ \ | |_  |  \| | / _ \ |  \| |"
-    Write-Host "                      / ___ \|  _| | |\  |/ ___ \| |\  |"
-    Write-Host "                     /_/   \_\_|   |_| \_/_/   \_\_| \_|"
+    Write-Host "                         _      _   _    ____   _____   _          _    "
+    Write-Host "                        / \    | \ | |  / ___|  | ____| | |        / \   "
+    Write-Host "                       / _ \   |  \| | | |  _   |  _|   | |       / _ \  "
+    Write-Host "                      / ___ \  | |\  | | |_| | | |___  | |___   / ___ \ "
+    Write-Host "                     /_/   \_\ |_| \_|  \____| |_____| |_____| /_/   \_\"
     Write-Host ""
     Write-Host "   ================================================================"
     Write-Host "   =                    MAIN MENU - Press Key                     ="
