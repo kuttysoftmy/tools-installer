@@ -3,7 +3,7 @@ message: "If you use this software, please cite it using the metadata from this 
 title: "tools-installer"
 type: software
 authors:
-  - family-names: "kuttysoftmy"
+  - alias: "kuttysoftmy"
 repository-code: "https://github.com/kuttysoftmy/tools-installer"
 url: "https://github.com/kuttysoftmy/tools-installer"
 license: MIT
